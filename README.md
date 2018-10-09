@@ -1,4 +1,4 @@
-![alt text](https://imgur.com/a/0PV9KeF)
+![alt text](https://imgur.com/6A7Og5r)
 # SDL2-C-Pong
 A simple game of pong written in C with SDL.
 
