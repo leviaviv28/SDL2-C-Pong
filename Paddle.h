@@ -7,9 +7,10 @@
 typedef struct{
 	SDL_Rect rect;
 	int score;
+	int controls[2];
 }Paddle;
 
 void cpuLogic(Paddle *cpu, Ball* ball);
-void playerLogic(Paddle* player, int up, int down);
+void playerLogic(Paddle* player);
 
 #endif /* PADDLE_H_ */

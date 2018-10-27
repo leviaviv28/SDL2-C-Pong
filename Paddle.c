@@ -12,9 +12,9 @@ void cpuLogic(Paddle *cpu, Ball* ball){
 	else if(cpu->rect.y + cpu->rect.h >= WINDOW_HEIGHT) cpu->rect.y = WINDOW_HEIGHT - cpu->rect.h;
 }
 
-void playerLogic(Paddle* player, int up, int down){
-	if(up && !down) player->rect.y -= 5;
-	if(down && !up) player->rect.y += 5;
+void playerLogic(Paddle* player){
+	if(player->controls[0] && !player->controls[1]) player->rect.y -= 5;
+	if(player->controls[1] && !player->controls[0]) player->rect.y += 5;
 	if(player->rect.y <= 0) player->rect.y = 0;
 	if(player->rect.y + player->rect.h >= WINDOW_HEIGHT) player->rect.y = WINDOW_HEIGHT - player->rect.h;
 	return;
