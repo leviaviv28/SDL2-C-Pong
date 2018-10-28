@@ -26,5 +26,6 @@ void quit(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font);
 void renderScore(SDL_Renderer *renderer, const char *score_str, TTF_Font *font, SDL_Rect *rect, SDL_Color *color);
 void redraw(SDL_Renderer* renderer);
 void drawGame(SDL_Renderer *renderer, Paddle player, Paddle cpu, Ball ball);
-void drawMenuText(SDL_Renderer *renderer, TTF_Font* font, int players);
+void drawMenu(SDL_Renderer *renderer, TTF_Font* font, int players);
+void drawPaused(SDL_Renderer *renderer, TTF_Font* font);
 #endif /* RENDERER_H_ */

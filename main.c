@@ -49,20 +49,23 @@ int main(int argc, char **argv){
 	SDL_Rect score_rect;
 	//Event Handling Variables
 	int running = 0;
+	int paused = -1;
 	SDL_Event event;
 	//Game Loop
 	int players = 1;
 	while(!running){
 		if(selected == 0){
 			eventHandler_Menu(event, &running, &players, &selected);
-			drawMenuText(renderer, font, players);
+			drawMenu(renderer, font, players);
 		}else{
 			if(players == 1)
-				one_player_logic(event, &running, &ball, &player1, &player2, score_str);
+				one_player_logic(event, &running, &ball, &player1, &player2, score_str, &paused);
 			else
-				two_player_logic(event, &running, &ball, &player1, &player2, score_str);
+				two_player_logic(event, &running, &ball, &player1, &player2, score_str, &paused);
 			renderScore(renderer, score_str, font, &score_rect, &White);
 			drawGame(renderer, player1, player2, ball);
+			if(paused == 1)
+				drawPaused(renderer, font);
 		}
 		//Display updates on screen
 		redraw(renderer);

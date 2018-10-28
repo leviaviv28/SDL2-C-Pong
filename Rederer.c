@@ -97,7 +97,7 @@ void drawGame(SDL_Renderer *renderer, Paddle player, Paddle cpu, Ball ball){
 	return;
 }
 
-void drawMenuText(SDL_Renderer *renderer, TTF_Font* font, int players){
+void drawMenu(SDL_Renderer *renderer, TTF_Font* font, int players){
 	SDL_Color color;
 	SDL_Color White = { 255, 255, 255 };
 	SDL_Color Grey = { 169, 169, 169};
@@ -121,6 +121,16 @@ void drawMenuText(SDL_Renderer *renderer, TTF_Font* font, int players){
 	texture = SDL_CreateTextureFromSurface(renderer, surface);
 	SDL_Rect twoplayer_rect = {WINDOW_WIDTH/2 + 50, WINDOW_HEIGHT/2, WINDOW_WIDTH/2 - 100, 100};
 	SDL_RenderCopy(renderer, texture, NULL, &twoplayer_rect);
+	SDL_DestroyTexture(texture);
+	SDL_FreeSurface(surface);
+}
+
+void drawPaused(SDL_Renderer *renderer, TTF_Font* font){
+	SDL_Color White = { 255, 255, 255 };
+	SDL_Surface * surface = TTF_RenderText_Solid(font, "Paused", White);
+	SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, surface);
+	SDL_Rect pause_rect = {(WINDOW_WIDTH / 2) - 150, WINDOW_HEIGHT/2 - 150, 300, 200};
+	SDL_RenderCopy(renderer, texture, NULL, &pause_rect);
 	SDL_DestroyTexture(texture);
 	SDL_FreeSurface(surface);
 }
