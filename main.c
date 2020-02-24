@@ -4,9 +4,9 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
-#include "renderer.h"
-#include "ball.h"
-#include "paddle.h"
+#include "Renderer.h"
+#include "Ball.h"
+#include "Paddle.h"
 #include "GameScene.h"
 #include "Menu.h"
 
